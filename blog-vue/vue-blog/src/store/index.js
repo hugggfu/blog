@@ -1,17 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
 
-export default new Vuex.Store({
+Vue.use(Vuex)
+const store = new Vuex.Store({
   state: {
-  },
-  getters: {
+    currentPathName: ''
   },
   mutations: {
-  },
-  actions: {
-  },
-  modules: {
+    setPath (state) {
+      state.currentPathName = localStorage.getItem("currentPathName")
+    },
+    logout() {
+      // 清空缓存
+      localStorage.removeItem("user")
+
+    }
   }
 })
+
+export default store

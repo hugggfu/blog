@@ -91,7 +91,7 @@ export default {
       this.$store.commit("logout")
       this.$message.success("退出成功")
       location.reload();
-      this.$router.push("/home")
+      this.$router.push("/ho me")
     },
     getUser() {
       let username = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).userName : ""
